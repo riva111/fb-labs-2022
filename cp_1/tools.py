@@ -2,6 +2,11 @@ import math
 
 
 class tools:
+
+	#
+	# MONOGRAM
+	#
+
 	#на вході текст, на виході словник, ключ - буква, значення кількість символів в тексті
 	def count_symbols(text):
 		res = {}

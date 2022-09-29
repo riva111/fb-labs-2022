@@ -3,9 +3,6 @@ import math
 
 class tools:
 
-	#
-	# MONOGRAM
-	#
 
 	#на вході текст, на виході словник, ключ - буква, значення кількість символів в тексті
 	def count_symbols(text):
@@ -34,3 +31,23 @@ class tools:
 			res += entropy
 
 		return res
+
+	
+	def dict_bigram(text, intersection):
+		d = []
+		if intersection:
+			for i in range(0, len(text)-1):
+				d.append(text[i]+text[i+1])
+		else:
+			for i in range(0, len(text)-1, 2):
+				d.append(text[i]+text[i+1])
+		return d
+
+
+	def dict_calc_entropy_bigram(l,d):
+		res = 0
+		elements = len(l)
+		for i in d.values():
+			res += - (i/elements) * math.log2(i/elements)
+		
+		return res/2

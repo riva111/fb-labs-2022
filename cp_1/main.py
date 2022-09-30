@@ -10,7 +10,7 @@ from tools import tools
 
 
 if __name__ == "__main__":
-	f = files("text.txt")
+	f = files("text_short.txt")
 	
 
 	print("#")
@@ -18,7 +18,7 @@ if __name__ == "__main__":
 	print("#")
 
 	text = f.read()
-	text_wos = f.read() #без пробілів
+	text_wos = f.read_wos() #без пробілів
 
 	print("\n# text with spaces")
 	d = tools.count_symbols(text)
@@ -79,7 +79,9 @@ if __name__ == "__main__":
 
 	print("\n# text without spaces and without intersection")	
 	l = tools.dict_bigram(text_wos, intersection=False)
-	d = tools.count_symbols(l)
+	#print(l)
+	d = tools.count_symbols_bigram(l)
+	#print(d)
 	tools.dict_freq(d,text)
 	d = tools.dict_sort(d)
 	print(d)

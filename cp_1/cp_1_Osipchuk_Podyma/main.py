@@ -3,6 +3,8 @@ import math
 from files import files
 from tools import tools
 
+from collections import Counter
+
 
 
 
@@ -52,7 +54,7 @@ if __name__ == "__main__":
 	tools.dict_freq(d,text)
 	d = tools.dict_sort(d)
 	print(d)
-	entropy = tools.dict_calc_entropy_bigram(l, d)
+	entropy = tools.dict_calc_entropy_bigram(l, Counter(l))
 	print("Entropy:", entropy)
 	print("Redundant:", 1 - (entropy/math.log2(32)))
 	
@@ -63,7 +65,7 @@ if __name__ == "__main__":
 	tools.dict_freq(d,text)
 	d = tools.dict_sort(d)
 	print(d)
-	entropy = tools.dict_calc_entropy_bigram(l, d)
+	entropy = tools.dict_calc_entropy_bigram(l, Counter(l))
 	print("Entropy:", entropy)
 	print("Redundant:", 1 - (entropy/math.log2(32)))
 
@@ -73,7 +75,7 @@ if __name__ == "__main__":
 	tools.dict_freq(d,text)
 	d = tools.dict_sort(d)
 	print(d)
-	entropy = tools.dict_calc_entropy_bigram(l, d)
+	entropy = tools.dict_calc_entropy_bigram(l, Counter(l))
 	print("Entropy:", entropy)
 	print("Redundant:", 1 - (entropy/math.log2(31)))
 
@@ -85,7 +87,7 @@ if __name__ == "__main__":
 	tools.dict_freq(d,text)
 	d = tools.dict_sort(d)
 	print(d)
-	entropy = tools.dict_calc_entropy_bigram(l, d)
+	entropy = tools.dict_calc_entropy_bigram(l, Counter(l))
 	print("Entropy:", entropy)
 	print("Redundant:", 1 - (entropy/math.log2(31)))
 
